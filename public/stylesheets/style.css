@@ -6790,6 +6790,7 @@ section {
         -ms-flex-pack: justify;
             justify-content: space-between; }
     section .work-con .work {
+      margin-bottom: 4rem;
       width: calc(100% / 3 - 2rem);
       background: black;
       display: -webkit-box;
