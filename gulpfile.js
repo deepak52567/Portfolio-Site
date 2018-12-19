@@ -5,7 +5,7 @@ var autoprefix = require("gulp-autoprefixer"),
     sass = require("gulp-sass");
 
 var paths = {
-    scss: ["public/sass/*.scss"]
+    scss: ["sass/*.scss"]
 };
 
 gulp.task("sass", function () {

@@ -1,0 +1,23 @@
+@import "bourbon";
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+$spaceVal: 3rem;
+$black: black;
+$white: #fff;
+$sidebar: 10rem;
+
+body {
+  background: $black;
+  font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+div {
+  position: relative;
+  display: inline-block;
+}
