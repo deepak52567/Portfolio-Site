@@ -6454,7 +6454,8 @@ header {
   height: 5rem;
   background: linear-gradient(15deg, #ffffff, #fad45c);
   -webkit-box-shadow: 0 0 40px -8px #ffffff6e;
-          box-shadow: 0 0 40px -8px #ffffff6e; }
+          box-shadow: 0 0 40px -8px #ffffff6e;
+  z-index: 9; }
   header .logo-con {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6472,33 +6473,70 @@ header {
         line-height: 0.8rem;
         font-size: 0.8rem;
         color: #ff0c5b; }
-  header .nav-con ul {
-    margin: 0;
-    color: #262626;
+  header .resbars {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    list-style-type: none; }
-    header .nav-con ul li {
-      margin: 0 1rem;
-      padding: 0.5rem;
-      cursor: pointer; }
-  header .social-con {
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: none; }
+    header .resbars span {
+      width: 2rem;
+      height: 3px;
+      background: black;
+      margin-bottom: 3px;
+      -webkit-transition: 0.3s all ease-in-out;
+      transition: 0.3s all ease-in-out; }
+      header .resbars span:last-child {
+        margin: 0; }
+    header .resbars.active span:nth-child(2) {
+      opacity: 0; }
+    header .resbars.active span:nth-child(1) {
+      -webkit-transform: rotate(40deg);
+              transform: rotate(40deg);
+      -webkit-transform-origin: 10%;
+              transform-origin: 10%; }
+    header .resbars.active span:nth-child(3) {
+      -webkit-transform: rotate(-46deg);
+              transform: rotate(-46deg);
+      -webkit-transform-origin: 30%;
+              transform-origin: 30%; }
+  header .outer-nav {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
-    header .social-con a {
-      border-radius: 50%;
-      color: #fffefb;
-      padding: 0.5rem;
-      margin: 0 0.2rem; }
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+    header .outer-nav .nav-con ul {
+      margin: 0;
+      color: #262626;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      list-style-type: none; }
+      header .outer-nav .nav-con ul li {
+        margin: 0 1rem;
+        padding: 0.5rem;
+        cursor: pointer; }
+    header .outer-nav .social-con {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      header .outer-nav .social-con a {
+        border-radius: 50%;
+        color: #fffefb;
+        padding: 0.5rem;
+        margin: 0 0.2rem; }
 
 section {
   background: white;
@@ -6573,7 +6611,8 @@ section {
                 align-items: center;
         color: white;
         background: #f79495; }
-        section.top .tagline-con a.link i, section.top .tagline-con a.link span {
+        section.top .tagline-con a.link i,
+        section.top .tagline-con a.link span {
           z-index: 1; }
     section.top .art-con {
       position: relative;
@@ -6611,6 +6650,8 @@ section {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover; }
+        section.top .art-con .img-con .res-img {
+          display: none; }
 
 @-webkit-keyframes glow {
   0% {
@@ -6733,7 +6774,8 @@ section {
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
         background: linear-gradient(-45deg, #fbaa81, #fce397); }
-        section .work-con .work .action i, section .work-con .work .action span {
+        section .work-con .work .action i,
+        section .work-con .work .action span {
           z-index: 1; }
         section .work-con .work .action:hover::after {
           top: 4px;
@@ -6763,7 +6805,10 @@ section {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
     section.profile-sec .pro-con .img-con {
       -webkit-box-shadow: 0px 0px 100px -22px #0639a8e3;
               box-shadow: 0px 0px 100px -22px #0639a8e3;
@@ -6785,7 +6830,7 @@ section {
       width: 65%;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
-      padding: 0 3rem;
+      padding: 0 0 0 3rem;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -6856,6 +6901,110 @@ footer {
 
 @media (max-width: 1024px) {
   header {
-    padding: 0 4rem; }
+    padding: 0 3rem; }
   section {
-    padding: 0 4rem; } }
+    padding: 0 3rem; } }
+
+@media (max-width: 1024px) {
+  header .nav-con ul {
+    padding: 0; }
+  section.top {
+    height: calc(100vh - 2rem); }
+  section .work-con {
+    margin-bottom: 0; }
+    section .work-con .work {
+      width: calc(100% / 2 - 2rem); } }
+
+@media (max-width: 767px) {
+  header {
+    padding: 0 2rem;
+    position: fixed;
+    top: 0; }
+    header .resbars {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+    header .outer-nav {
+      position: fixed;
+      top: -100%;
+      width: 100%;
+      left: 0;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      background: linear-gradient(225deg, #fad65a, #fe54cb);
+      z-index: 6;
+      -webkit-transition: 0.3s all ease-in-out;
+      transition: 0.3s all ease-in-out;
+      padding: 1rem; }
+      header .outer-nav .nav-con ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; }
+      header .outer-nav .social-con {
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; }
+      header .outer-nav.active {
+        top: 5rem; }
+  section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    section .head {
+      margin-top: 0; }
+      section .head h1 {
+        font-size: 4rem; }
+    section.top {
+      height: auto; }
+      section.top .tagline-con {
+        width: 100%; }
+        section.top .tagline-con h1 span {
+          font-size: 4rem;
+          display: block; }
+        section.top .tagline-con a.link {
+          margin: 2rem 0;
+          z-index: 5; }
+      section.top .art-con {
+        width: 80%;
+        margin: auto 0 4rem; }
+        section.top .art-con:before {
+          left: 0; }
+        section.top .art-con .img-con {
+          left: 10%; }
+          section.top .art-con .img-con .res-img {
+            display: block;
+            max-width: 100%; }
+    section.profile-sec .pro-con {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      section.profile-sec .pro-con .img-con {
+        width: 100%; }
+      section.profile-sec .pro-con .pro-detail {
+        width: 100%;
+        margin-top: 3rem;
+        padding-left: 0; }
+    section .work-con .work {
+      width: 100%;
+      margin-bottom: 2rem; } }
+
+@media (max-width: 500px) {
+  section {
+    padding: 0 2rem; }
+    section.top .tagline-con span.desc {
+      letter-spacing: 0.1em; }
+    section.potfolio {
+      padding: 3rem 2rem 0rem; }
+    section.profile-sec .pro-con .pro-detail p {
+      letter-spacing: 0.1em; } }
