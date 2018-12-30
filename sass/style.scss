@@ -89,7 +89,8 @@ header {
 
   .outer-nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    flex-grow: 1;
 
     .nav-con {
       ul {
@@ -99,9 +100,9 @@ header {
         flex-direction: row;
         align-items: center;
         list-style-type: none;
-
+        padding: 0;
         li {
-          margin: 0 1rem;
+          margin-right: 1rem;
           padding: 0.5rem;
           cursor: pointer;
         }
@@ -110,12 +111,14 @@ header {
 
     .social-con {
       display: flex;
-
       a {
         border-radius: 50%;
         color: #fffefb;
-        padding: 0.5rem;
-        margin: 0 0.2rem;
+        padding: 0.5em;
+        margin: 0 0.5em;
+        i{
+          font-size: 1.3rem;
+        }
       }
     }
   }
@@ -198,7 +201,7 @@ section {
       position: relative;
       display: flex;
       animation: glow 0.3s ease-in-out forwards;
-      height: 70%;
+      height: 70vh;
       width: 35%;
       opacity: 1;
       margin: auto 0;
@@ -292,10 +295,9 @@ section {
     display: flex;
     flex-flow: row wrap;
     margin: 2rem 0;
-    justify-content: space-between;
 
     .work {
-      margin-bottom: 4rem;
+      margin: 0 1rem 1rem 1rem;
       width: calc(100% / 3 - 2rem);
       display: flex;
       flex-direction: column;
@@ -335,6 +337,9 @@ section {
           &.time{
             font-weight: normal;
             font-size: 0.7rem;
+          }
+          &.author-name {
+            color: #f29b7a;
           }
         }
       }
@@ -482,12 +487,14 @@ footer {
 
   .social-con {
     display: flex;
-
     a {
       border-radius: 50%;
-      color: lighten($black, 15%);
-      padding: 0.5rem;
-      margin: 0 1rem;
+      color: #fffefb;
+      padding: 0.5em;
+      margin: 0 0.5em;
+      i{
+        font-size: 1.3rem;
+      }
     }
   }
 

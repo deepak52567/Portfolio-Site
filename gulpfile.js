@@ -14,7 +14,7 @@ gulp.task("sass", function () {
             sourcemaps: true,
             includePaths: bourbon
         }))
-        .pipe(autoprefix("last 2 versions"))
+        .pipe(autoprefix("last 10 versions"))
         .pipe(gulp.dest("public/stylesheets"))
         .pipe(connect.reload());
 });
