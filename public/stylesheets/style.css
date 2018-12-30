@@ -128,7 +128,6 @@ header {
             flex-grow: 1; }
     header .outer-nav .nav-con ul {
       margin: 0;
-      color: #262626;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -148,6 +147,8 @@ header {
         margin-right: 1rem;
         padding: 0.5rem;
         cursor: pointer; }
+        header .outer-nav .nav-con ul li a {
+          color: #262626; }
     header .outer-nav .social-con {
       display: -webkit-box;
       display: -webkit-flex;
