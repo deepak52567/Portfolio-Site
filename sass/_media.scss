@@ -43,24 +43,46 @@
         .outer-nav {
             position: fixed;
             top: -100%;
-            width: 100%;
+            width: calc(100% - 2rem);
             left: 0;
+            height: calc(100vh - 7rem);
             flex-direction: column;
             background: linear-gradient(225deg, #fad65a, #fe54cb);
             z-index: 6;
             transition: 0.3s all ease-in-out;
             padding: 1rem;
+            opacity: 0;
+
+            &.active{
+                top: 5rem;
+                opacity: 1;
+            }            
 
             .nav-con {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
                 ul {
+                    flex-grow: 1;
                     display: flex;
                     flex-direction: column;
+                    justify-content: space-evenly;
+                    li{
+                        margin: 0;
+                        a{
+                            color: white;
+                            font-size: 1.5rem;
+                        }
+                    }
                 }
             }
 
             .social-con {
                 align-items: center;
                 justify-content: center;
+                a{
+                    margin: 0 1em;
+                }
             }
 
             &.active{
