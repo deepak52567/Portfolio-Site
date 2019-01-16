@@ -131,6 +131,7 @@ section {
   background: white;
   min-height: 100vh;
   padding: 0 10%;
+  box-shadow: 0 0 40px -8px #ffffff6e;
 
   &.top {
     min-height: unset;
@@ -167,7 +168,7 @@ section {
         margin: 0;
 
         span {
-          color: lighten($black, 40%);
+          color: #ffecaf;
           margin: 0;
           font-size: 6rem;
         }
@@ -218,7 +219,7 @@ section {
         right: 5%;
         z-index: -1;
         bottom: -5%;
-        border: 3px solid white;
+        border: 3px solid #f98d9d;
       }
 
       .img-con {
@@ -231,6 +232,7 @@ section {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        border: 3px solid #ffda64;
 
         .res-img{
           display: none;
@@ -293,6 +295,12 @@ section {
 
   &.potfolio {
     padding: 3rem 10%;
+    background: linear-gradient(177deg, #fe69b9, #48c4b2);
+    .head {
+      h1{
+        color: #f78ad7;
+      }
+    }
   }
 
   .work-con {
@@ -305,6 +313,9 @@ section {
       width: calc(100% / 3 - 2rem);
       display: flex;
       flex-direction: column;
+      &:last-of-type{
+        width: calc(100% - 2rem);
+      }
       .wp-block-cover {
         box-shadow: 0px 0px 100px -22px #122c43;
         background-position: center;
@@ -324,15 +335,15 @@ section {
       }
       h2 {
         margin: 0;
-        color: lighten($black, 40%);
+        color: darken($white, 0%);
       }
       p {
         margin: 0 0 0.5em 0;
         font-size: 0.9rem;
-        color: lighten($black, 15%);
+        color: darken($white, 5%);
       }
       .author-con{
-        color: lighten($black, 70%);
+        color: darken($white, 10%);
         font-weight: bold;        
         a {
           color: #f29b7a;
@@ -343,7 +354,7 @@ section {
             font-size: 0.7rem;
           }
           &.author-name {
-            color: #f29b7a;
+            color: #ffb2f0;
           }
         }
       }
@@ -359,7 +370,7 @@ section {
           color: white;
           font-weight: bold;
           transition: all 0.3s ease-in-out;
-          background: linear-gradient(-45deg, rgb(251, 170, 129), #fce397);
+          background: linear-gradient(-7deg, #f78ad7, #21b2d1);
           i, span {
             z-index: 1;
           }
@@ -413,6 +424,14 @@ section {
   }
 
   &.profile-sec {
+    background: linear-gradient(-29deg, #fad65a, #00BCD4);
+    display: flex;
+    flex-direction: column;
+    .head {
+      h1{
+        color: #82d5b5;
+      }
+    }
     .pro-con {
       margin: 2rem 0;
       width: 100%;
@@ -442,7 +461,7 @@ section {
         h1 {
           position: relative;
           margin: 0;
-          color: lighten($black, 15%);
+          color: #fce397;
           font-size: 6rem;
           margin-bottom: 0.5rem;
           line-height: 5rem;
@@ -458,7 +477,7 @@ section {
           letter-spacing: 0.3em;
           margin-top: 0.5em;
           display: inline-block;
-          color: #212121;
+          color: white;
           font-size: 1.3rem;
 
           span {
@@ -469,6 +488,89 @@ section {
 
           &:first-of-type {
             margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+  &.contact{
+    background: linear-gradient(88deg, #81C784, #f7d65e);
+    display: flex;
+    flex-direction: column;
+    .head {
+      h1{
+        color: #ced16c;
+      }
+    }
+    .pro-con {
+      margin: 2rem 0;
+      width: 100%;
+      display: flex;
+
+      .img-con {
+        box-shadow: 0px 0px 100px -22px #0639a8e3;
+        box-sizing: border-box;
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        iframe {
+          width: 100%;
+          height: 100%;
+        }
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .pro-detail {
+        width: 55%;
+        box-sizing: border-box;
+        padding: 0 3rem 0 0;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+          position: relative;
+          margin: 0;
+          color: #fce397;
+          font-size: 6rem;
+          margin-bottom: 0.5rem;
+          line-height: 5rem;
+
+          &.sub-head {
+            font-size: 2.5rem;
+            line-height: 2.5rem;
+          }
+        }
+
+        p {
+          font-weight: normal;
+          letter-spacing: 0.3em;
+          margin-top: 0.5em;
+          display: inline-block;
+          color: white;
+          font-size: 1.3rem;
+          margin-top: 0;
+          span {
+            color: white;
+            font-style: 5rem;
+            font-weight: bold;
+          }
+
+          &.social-con {
+            display: flex;
+            a {
+              border-radius: 50%;
+              color: #fffefb;
+              padding: 0.5em 1em;
+              margin-right: 0.5em;
+              i{
+                font-size: 1.5rem;
+              }
+            }
           }
         }
       }
@@ -486,8 +588,8 @@ footer {
   width: 100%;
   box-sizing: border-box;
   height: 5rem;
-  background: linear-gradient(15deg, #ffffff, #fad45c);
-  box-shadow: 0 0 80px -11px #35353540;
+  background: linear-gradient(15deg, #C5E1A5, #fad45c);
+  box-shadow: 0 0 80px -11px #ffffff6b;
 
   .social-con {
     display: flex;

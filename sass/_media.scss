@@ -157,6 +157,25 @@
             }
         }
 
+        &.contact {
+            .pro-con {
+                flex-direction: column-reverse;
+
+                .img-con {
+                    width: 100%;
+                    iframe {
+                        min-height: 60vh;
+                    }
+                }
+
+                .pro-detail {
+                    width: 100%;
+                    margin-top: 3rem;
+                    padding-right: 0;
+                }
+            }
+        }
+
         .work-con {
             .work {
                 width: 100%;
